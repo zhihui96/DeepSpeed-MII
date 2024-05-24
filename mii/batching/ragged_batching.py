@@ -183,7 +183,7 @@ class RaggedBatchBase:
             next_token_logits: torch.Tensor,
             running_requests: RequestBatch) -> Tuple[torch.Tensor,
                                                      torch.Tensor]:
-        next_token_logits = next_token_logits[:, :self.vocab_size]
+        # next_token_logits = next_token_logits[:, :self.vocab_size]
         next_token_logits = self.logit_processor(next_token_logits,
                                                  running_requests,
                                                  self._post_processors)

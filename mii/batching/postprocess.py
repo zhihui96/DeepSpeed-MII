@@ -38,7 +38,8 @@ def run_batch_processing(input_tensor: torch.Tensor,
     # If there are unprocessed requests, append them to the output
     unprocessed_idx = list(set(range(len(requests))).difference(idx_list))
     if unprocessed_idx:
-        idx_list.append(unprocessed_idx)
+        # idx_list.append(unprocessed_idx)
+        idx_list.extend(unprocessed_idx)
         output_list.append(input_tensor[unprocessed_idx])
 
     # Concatenate and return the output
